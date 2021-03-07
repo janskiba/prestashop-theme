@@ -4,14 +4,16 @@
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-display: swap;
   src: url(~material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src:
-    local("Material Icons"), local("MaterialIcons-Regular"), url(~material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff2)
-    format("woff2"), url(~material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff)
-    format("woff"), url(~material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.ttf)
-    format("truetype");
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(~material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff2)
+      format("woff2"),
+    url(~material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.woff)
+      format("woff"),
+    url(~material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.ttf)
+      format("truetype");
 }
 /* stylelint-enable */
 
@@ -20,9 +22,9 @@
   width: 1em;
   height: 1em;
   font-family: "Material Icons", Arial, sans-serif;
-  font-size: 24px; /* Preferred icon size */
+  font-size: 30px; /* Preferred icon size */
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;

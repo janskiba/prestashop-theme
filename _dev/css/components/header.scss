@@ -2,7 +2,7 @@
   position: relative;
   z-index: 999;
   color: $gray;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.11);
 
   .logo {
@@ -149,6 +149,7 @@
 
     > .container {
       position: relative;
+      width: $primary-width;
 
       > .row:first-of-type {
         display: flex;
@@ -167,12 +168,13 @@
     }
 
     .position-static {
-      position: static;
+      display: inline-grid;
+      grid-template-columns: 90% 5% 5%;
     }
 
     a[data-depth="0"] {
-      color: $gray;
-      text-transform: uppercase;
+      color: $black;
+      text-transform: none;
     }
 
     .search-widget {
@@ -194,5 +196,11 @@
         margin: 0;
       }
     }
+  }
+}
+
+@media (max-width: 1499px) {
+  .container {
+    max-width: $max-width-md;
   }
 }

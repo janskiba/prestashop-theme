@@ -9,6 +9,7 @@
 
   &[data-depth="0"] {
     margin-bottom: 0;
+    text-align: center;
   }
 
   a:not([data-depth="0"]) {
@@ -26,15 +27,15 @@
 
   a[data-depth="0"] {
     padding: $small-space;
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 300;
 
-    &:hover {
+    /*  &:hover {
       #header & {
         color: $brand-primary;
         text-decoration: none;
       }
-    }
+    } */
   }
 
   a[data-depth="1"],

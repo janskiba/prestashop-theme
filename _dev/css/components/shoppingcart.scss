@@ -1,0 +1,16 @@
+#_desktop_cart {
+  position: relative;
+  float: right;
+  padding-top: 5px;
+
+  .hidden-sm-down {
+    display: none;
+  }
+
+  .cart-products-count {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    font-size: 0.8rem;
+  }
+}
