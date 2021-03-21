@@ -10706,10 +10706,10 @@ body#checkout #footer {
   #header .header-top .search-widget {
     width: 100%;
   }
-  #header.is-open,
+  /*  #header.is-open,
   #header.is-open .header-top {
     background-color: #fff;
-  }
+  } */
   section.checkout-step {
     width: 100%;
   }

@@ -445,6 +445,7 @@
 }
 
 /*** Responsive part ***/
+
 @include media-breakpoint-down(sm) {
   #category {
     #left-column {
@@ -582,18 +583,9 @@
       padding-left: 0;
     }
   }
-
-  #category {
-    #left-column {
-      #search_filters_wrapper {
-        margin-right: -15px;
-        margin-left: -15px;
-      }
-    }
-  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1025px) {
   .category-cover {
     display: none;
   }
@@ -613,7 +605,6 @@
     box-shadow: none;
   }
 }
-
 
 @include media-breakpoint-down(md) {
   #products {

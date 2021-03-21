@@ -1,12 +1,19 @@
 #wrapper {
-  padding-top: 1.563rem;
+  padding-top: 0;
   background: $gray-lighter;
+
+  .container {
+    width: 100%;
+    padding: 0;
+  }
 
   .banner {
     display: block;
     margin-bottom: 1.5rem;
   }
-
+  #imageslider-container {
+    padding: 0;
+  }
   .breadcrumb {
     padding: 0;
     background: transparent;

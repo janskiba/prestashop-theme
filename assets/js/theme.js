@@ -1694,19 +1694,19 @@ module.exports = exports['default'];
  */
 
 
-Object.defineProperty(exports, '__esModule', {
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _jquery = __webpack_require__(0);
 
@@ -1726,72 +1726,72 @@ var TopMenu = (function (_DropDown) {
   function TopMenu() {
     _classCallCheck(this, TopMenu);
 
-    _get(Object.getPrototypeOf(TopMenu.prototype), 'constructor', this).apply(this, arguments);
+    _get(Object.getPrototypeOf(TopMenu.prototype), "constructor", this).apply(this, arguments);
   }
 
   _createClass(TopMenu, [{
-    key: 'init',
+    key: "init",
     value: function init() {
       var _this = this;
 
       var elmtClass = undefined;
       var self = this;
-      this.el.find('li').hover(function (e) {
-        if (_this.el.parent().hasClass('mobile')) {
+      this.el.find("li").hover(function (e) {
+        if (_this.el.parent().hasClass("mobile")) {
           return;
         }
-        var currentTargetClass = (0, _jquery2['default'])(e.currentTarget).attr('class');
+        var currentTargetClass = (0, _jquery2["default"])(e.currentTarget).attr("class");
 
         if (elmtClass !== currentTargetClass) {
           // eslint-disable-next-line
           var classesSelected = Array.prototype.slice.call(e.currentTarget.classList).map(function (elem) {
-            return typeof elem === 'string' ? '.' + elem : false;
+            return typeof elem === "string" ? "." + elem : false;
           });
 
-          elmtClass = classesSelected.join('');
+          elmtClass = classesSelected.join("");
 
-          if (elmtClass && (0, _jquery2['default'])(e.target).data('depth') === 0) {
-            (0, _jquery2['default'])(elmtClass + ' .js-sub-menu').css({
-              top: (0, _jquery2['default'])('' + elmtClass).height() + (0, _jquery2['default'])('' + elmtClass).position().top
+          if (elmtClass && (0, _jquery2["default"])(e.target).data("depth") === 0) {
+            (0, _jquery2["default"])(elmtClass + " .js-sub-menu").css({
+              top: (0, _jquery2["default"])("" + elmtClass).height() + (0, _jquery2["default"])("" + elmtClass).position().top
             });
           }
         }
       });
-      (0, _jquery2['default'])('#menu-icon').on('click', function () {
-        (0, _jquery2['default'])('#mobile_top_menu_wrapper').toggle();
+      (0, _jquery2["default"])("#menu-icon").on("click", function () {
+        (0, _jquery2["default"])("#mobile_top_menu_wrapper").toggle();
         self.toggleMobileMenu();
       });
 
-      this.el.on('click', function (e) {
-        if (_this.el.parent().hasClass('mobile')) {
+      this.el.on("click", function (e) {
+        if (_this.el.parent().hasClass("mobile")) {
           return;
         }
         e.stopPropagation();
       });
 
-      _prestashop2['default'].on('responsive update', function () {
-        (0, _jquery2['default'])('.js-sub-menu').removeAttr('style');
+      _prestashop2["default"].on("responsive update", function () {
+        (0, _jquery2["default"])(".js-sub-menu").removeAttr("style");
         self.toggleMobileMenu();
       });
-      _get(Object.getPrototypeOf(TopMenu.prototype), 'init', this).call(this);
+      _get(Object.getPrototypeOf(TopMenu.prototype), "init", this).call(this);
     }
   }, {
-    key: 'toggleMobileMenu',
+    key: "toggleMobileMenu",
     value: function toggleMobileMenu() {
-      (0, _jquery2['default'])('#header').toggleClass('is-open');
-      if ((0, _jquery2['default'])('#mobile_top_menu_wrapper').is(':visible')) {
-        (0, _jquery2['default'])('#notifications, #wrapper, #footer').hide();
+      (0, _jquery2["default"])("#header").toggleClass("is-open");
+      if ((0, _jquery2["default"])("#mobile_top_menu_wrapper").is(":visible")) {
+        (0, _jquery2["default"])("#notifications, #wrapper, #footer").hide();
       } else {
-        (0, _jquery2['default'])('#notifications, #wrapper, #footer').show();
+        (0, _jquery2["default"])("#notifications, #wrapper, #footer").show();
       }
     }
   }]);
 
   return TopMenu;
-})(_dropDown2['default']);
+})(_dropDown2["default"]);
 
-exports['default'] = TopMenu;
-module.exports = exports['default'];
+exports["default"] = TopMenu;
+module.exports = exports["default"];
 
 /***/ }),
 /* 14 */
@@ -2642,7 +2642,7 @@ var _componentsProductSelect2 = _interopRequireDefault(_componentsProductSelect)
  */
 
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _jquery = __webpack_require__(0);
 
@@ -2652,11 +2652,11 @@ var _prestashop = __webpack_require__(1);
 
 var _prestashop2 = _interopRequireDefault(_prestashop);
 
-_prestashop2['default'].responsive = _prestashop2['default'].responsive || {};
+_prestashop2["default"].responsive = _prestashop2["default"].responsive || {};
 
-_prestashop2['default'].responsive.current_width = window.innerWidth;
-_prestashop2['default'].responsive.min_width = 768;
-_prestashop2['default'].responsive.mobile = _prestashop2['default'].responsive.current_width < _prestashop2['default'].responsive.min_width;
+_prestashop2["default"].responsive.current_width = window.innerWidth;
+_prestashop2["default"].responsive.min_width = 1025;
+_prestashop2["default"].responsive.mobile = _prestashop2["default"].responsive.current_width < _prestashop2["default"].responsive.min_width;
 
 function swapChildren(obj1, obj2) {
   var temp = obj2.children().detach();
@@ -2665,43 +2665,43 @@ function swapChildren(obj1, obj2) {
 }
 
 function toggleMobileStyles() {
-  if (_prestashop2['default'].responsive.mobile) {
-    (0, _jquery2['default'])("*[id^='_desktop_']").each(function (idx, el) {
-      var target = (0, _jquery2['default'])('#' + el.id.replace('_desktop_', '_mobile_'));
+  if (_prestashop2["default"].responsive.mobile) {
+    (0, _jquery2["default"])("*[id^='_desktop_']").each(function (idx, el) {
+      var target = (0, _jquery2["default"])("#" + el.id.replace("_desktop_", "_mobile_"));
 
       if (target.length) {
-        swapChildren((0, _jquery2['default'])(el), target);
+        swapChildren((0, _jquery2["default"])(el), target);
       }
     });
   } else {
-    (0, _jquery2['default'])("*[id^='_mobile_']").each(function (idx, el) {
-      var target = (0, _jquery2['default'])('#' + el.id.replace('_mobile_', '_desktop_'));
+    (0, _jquery2["default"])("*[id^='_mobile_']").each(function (idx, el) {
+      var target = (0, _jquery2["default"])("#" + el.id.replace("_mobile_", "_desktop_"));
 
       if (target.length) {
-        swapChildren((0, _jquery2['default'])(el), target);
+        swapChildren((0, _jquery2["default"])(el), target);
       }
     });
   }
-  _prestashop2['default'].emit('responsive update', {
-    mobile: _prestashop2['default'].responsive.mobile
+  _prestashop2["default"].emit("responsive update", {
+    mobile: _prestashop2["default"].responsive.mobile
   });
 }
 
-(0, _jquery2['default'])(window).on('resize', function () {
-  var cw = _prestashop2['default'].responsive.current_width;
-  var mw = _prestashop2['default'].responsive.min_width;
+(0, _jquery2["default"])(window).on("resize", function () {
+  var cw = _prestashop2["default"].responsive.current_width;
+  var mw = _prestashop2["default"].responsive.min_width;
   var w = window.innerWidth;
   var toggle = cw >= mw && w < mw || cw < mw && w >= mw;
 
-  _prestashop2['default'].responsive.current_width = w;
-  _prestashop2['default'].responsive.mobile = _prestashop2['default'].responsive.current_width < _prestashop2['default'].responsive.min_width;
+  _prestashop2["default"].responsive.current_width = w;
+  _prestashop2["default"].responsive.mobile = _prestashop2["default"].responsive.current_width < _prestashop2["default"].responsive.min_width;
   if (toggle) {
     toggleMobileStyles();
   }
 });
 
-(0, _jquery2['default'])(document).ready(function () {
-  if (_prestashop2['default'].responsive.mobile) {
+(0, _jquery2["default"])(document).ready(function () {
+  if (_prestashop2["default"].responsive.mobile) {
     toggleMobileStyles();
   }
 });

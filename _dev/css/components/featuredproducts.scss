@@ -1,6 +1,10 @@
 $thumbnail-size: 250px;
 $product-description-height: 70px;
 
+.row {
+  margin: 0 !important;
+}
+
 #products,
 .featured-products,
 .product-accessories,
