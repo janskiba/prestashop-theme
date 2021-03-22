@@ -1,10 +1,6 @@
 $thumbnail-size: 250px;
 $product-description-height: 70px;
 
-.row {
-  margin: 0 !important;
-}
-
 #products,
 .featured-products,
 .product-accessories,
@@ -13,6 +9,7 @@ $product-description-height: 70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin: 0 !important;
   }
 
   .product-thumbnail {

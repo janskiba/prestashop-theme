@@ -194,6 +194,11 @@
 
       .container {
         padding: 16px 0px;
+        width: 100%;
+        margin: 0;
+        .row {
+          margin: 0 10px;
+        }
       }
 
       .hidden-md-up {
@@ -206,16 +211,13 @@
 
       .img-responsive {
         padding-top: 12px;
+        margin-left: 65px;
       }
     }
 
     .header-top {
       padding: 0;
       height: 0;
-
-      #mobile_top_menu_wrapper {
-        display: unset;
-      }
     }
   }
 
@@ -223,6 +225,7 @@
     .header-nav {
       .img-responsive {
         padding-top: 0;
+        margin-left: 0px;
       }
     }
   }

@@ -23,6 +23,26 @@
       line-height: 1;
     }
   }
+
+  a {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    &:hover {
+      cursor: pointer;
+    }
+
+    span {
+      position: relative;
+      left: -50%;
+      color: white;
+      font-size: 50px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 @media (max-width: 1629px) {
@@ -52,8 +72,13 @@
   }
 }
 
-@media (max-width: 399px) {
+@media (max-width: 411px) {
   .banner-caption {
+    width: 95vw !important;
     text-align: center !important;
+
+    p {
+      line-height: 1.3 !important;
+    }
   }
 }
