@@ -16,6 +16,9 @@ $product-description-height: 70px;
 .featured-products,
 .product-accessories,
 .product-miniature {
+  margin-bottom: 3rem;
+  z-index: -1;
+
   .products {
     display: flex;
     flex-wrap: wrap;
@@ -27,17 +30,6 @@ $product-description-height: 70px;
       margin: auto;
     }
   }
-
-  /*   .come-in {
-    transform: translateY(100px);
-    animation: come-in 0.8s ease forwards;
-  }
-
-  @keyframes come-in {
-    to {
-      transform: translate3d(0, 0, 0);
-    }
-  } */
 
   .product-thumbnail {
     display: block;
@@ -106,7 +98,7 @@ $product-description-height: 70px;
   }
 
   .products-section-title {
-    margin: 3.5rem 0;
+    padding: 3.5rem 0;
     text-align: center;
     font-weight: 300;
   }
