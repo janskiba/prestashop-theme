@@ -20,10 +20,9 @@ $product-description-height: 70px;
   z-index: -1;
 
   .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    max-width: 1700px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    max-width: 1400px;
     margin: auto;
 
     > div {
@@ -206,6 +205,15 @@ $product-description-height: 70px;
   .featured-products {
     .products {
       justify-content: center;
+    }
+  }
+
+  @media (max-width: 833px) {
+    .featured-products {
+      .products {
+        display: grid;
+        grid-template-columns: 100%;
+      }
     }
   }
 }
