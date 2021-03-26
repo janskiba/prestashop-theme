@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 29);
+/******/ 	return __webpack_require__(__webpack_require__.s = 31);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -955,37 +955,37 @@ module.exports = __webpack_amd_options__;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-__webpack_require__(28);
+__webpack_require__(30);
 
-__webpack_require__(22);
-
-__webpack_require__(24);
-
-__webpack_require__(21);
+__webpack_require__(23);
 
 __webpack_require__(25);
 
+__webpack_require__(22);
+
+__webpack_require__(26);
+
+__webpack_require__(21);
+
 __webpack_require__(20);
+
+__webpack_require__(11);
+
+__webpack_require__(15);
+
+__webpack_require__(18);
 
 __webpack_require__(19);
 
 __webpack_require__(10);
 
-__webpack_require__(14);
-
-__webpack_require__(17);
-
-__webpack_require__(18);
-
 __webpack_require__(9);
-
-__webpack_require__(82);
 
 var _prestashop = __webpack_require__(1);
 
 var _prestashop2 = _interopRequireDefault(_prestashop);
 
-var _events = __webpack_require__(23);
+var _events = __webpack_require__(24);
 
 var _events2 = _interopRequireDefault(_events);
 
@@ -993,7 +993,7 @@ var _componentsDropDown = __webpack_require__(2);
 
 var _componentsDropDown2 = _interopRequireDefault(_componentsDropDown);
 
-var _componentsForm = __webpack_require__(12);
+var _componentsForm = __webpack_require__(13);
 
 var _componentsForm2 = _interopRequireDefault(_componentsForm);
 
@@ -1005,15 +1005,15 @@ var _componentsProductSelect = __webpack_require__(4);
 
 var _componentsProductSelect2 = _interopRequireDefault(_componentsProductSelect);
 
-var _componentsTopMenu = __webpack_require__(13);
+var _componentsTopMenu = __webpack_require__(14);
 
 var _componentsTopMenu2 = _interopRequireDefault(_componentsTopMenu);
 
-__webpack_require__(15);
-
 __webpack_require__(16);
 
-__webpack_require__(11);
+__webpack_require__(17);
+
+__webpack_require__(12);
 
 var _jquery = __webpack_require__(0);
 
@@ -1062,6 +1062,61 @@ for (var i in _events2["default"].prototype) {
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var $ = __webpack_require__(0);
+var scrollTo = __webpack_require__(27);
+
+$(document).ready(function () {
+  // Scrolling effect for Arrow icons
+  $(".banner-full-height a").click(function (e) {
+    $.scrollTo($(".products-section-title"), 800);
+  });
+});
+
+(function ($) {
+  /**
+   * Copyright 2012, Digital Fusion
+   * Licensed under the MIT license.
+   * http://teamdf.com/jquery-plugins/license/
+   *
+   * @author Sam Sehnert
+   * @desc A small plugin that checks whether elements are within
+   *     the user visible viewport of a web browser.
+   *     only accounts for vertical position, not horizontal.
+   */
+
+  $.fn.visible = function (partial) {
+    var $t = $(this),
+        $w = $(window),
+        viewTop = $w.scrollTop(),
+        viewBottom = viewTop + $w.height(),
+        _top = $t.offset().top,
+        _bottom = _top + $t.height(),
+        compareTop = partial === true ? _bottom : _top,
+        compareBottom = partial === true ? _top : _bottom;
+
+    return compareBottom <= viewBottom && compareTop >= viewTop;
+  };
+})(jQuery);
+
+var win = $(window);
+var allMods = $(["#recommended", "#custom-text", "#bestsellers"]);
+
+win.scroll(function (event) {
+  allMods.each(function (i, el) {
+    var el = $(el);
+    if (el.visible(true)) {
+      el.addClass("come-in");
+    }
+  });
+});
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1418,7 +1473,7 @@ var CheckUpdateQuantityOperations = {
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1512,7 +1567,7 @@ function toggleImage() {
 });
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1577,7 +1632,7 @@ _prestashop2['default'].blockcart.showModal = function (html) {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1666,7 +1721,7 @@ exports['default'] = Form;
 module.exports = exports['default'];
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1796,7 +1851,7 @@ exports["default"] = TopMenu;
 module.exports = exports["default"];
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1854,7 +1909,7 @@ function setupCustomerScripts() {
 (0, _jquery2['default'])(document).ready(setupCustomerScripts);
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2076,7 +2131,7 @@ function setupCustomerScripts() {
 })(window.jQuery);
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2241,7 +2296,7 @@ function setupCustomerScripts() {
 })(jQuery);
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2437,7 +2492,7 @@ function updateProductListDOM(data) {
 }
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2614,7 +2669,7 @@ var _componentsProductSelect2 = _interopRequireDefault(_componentsProductSelect)
 });
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2709,7 +2764,7 @@ function toggleMobileStyles() {
 });
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2797,7 +2852,7 @@ _prestashop2['default'].themeSelectors = {
 });
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3480,7 +3535,7 @@ _prestashop2['default'].themeSelectors = {
 })(jQuery);
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4277,7 +4332,7 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
 })();
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4550,7 +4605,7 @@ function isUndefined(arg) {
 }
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4733,7 +4788,7 @@ var require;var require;
 });
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5014,7 +5069,229 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 26 */
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * jQuery.scrollTo
+ * Copyright (c) 2007 Ariel Flesler - aflesler ○ gmail • com | https://github.com/flesler
+ * Licensed under MIT
+ * https://github.com/flesler/jquery.scrollTo
+ * @projectDescription Lightweight, cross-browser and highly customizable animated scrolling with jQuery
+ * @author Ariel Flesler
+ * @version 2.1.3
+ */
+
+
+;(function (factory) {
+	'use strict';
+	if (true) {
+		// AMD
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else if (typeof module !== 'undefined' && module.exports) {
+		// CommonJS
+		module.exports = factory(require('jquery'));
+	} else {
+		// Global
+		factory(jQuery);
+	}
+})(function ($) {
+	'use strict';
+
+	var $scrollTo = $.scrollTo = function (target, duration, settings) {
+		return $(window).scrollTo(target, duration, settings);
+	};
+
+	$scrollTo.defaults = {
+		axis: 'xy',
+		duration: 0,
+		limit: true
+	};
+
+	function isWin(elem) {
+		return !elem.nodeName || $.inArray(elem.nodeName.toLowerCase(), ['iframe', '#document', 'html', 'body']) !== -1;
+	}
+
+	function isFunction(obj) {
+		// Brought from jQuery since it's deprecated
+		return typeof obj === 'function';
+	}
+
+	$.fn.scrollTo = function (target, duration, settings) {
+		if (typeof duration === 'object') {
+			settings = duration;
+			duration = 0;
+		}
+		if (typeof settings === 'function') {
+			settings = { onAfter: settings };
+		}
+		if (target === 'max') {
+			target = 9e9;
+		}
+
+		settings = $.extend({}, $scrollTo.defaults, settings);
+		// Speed is still recognized for backwards compatibility
+		duration = duration || settings.duration;
+		// Make sure the settings are given right
+		var queue = settings.queue && settings.axis.length > 1;
+		if (queue) {
+			// Let's keep the overall duration
+			duration /= 2;
+		}
+		settings.offset = both(settings.offset);
+		settings.over = both(settings.over);
+
+		return this.each(function () {
+			// Null target yields nothing, just like jQuery does
+			if (target === null) return;
+
+			var win = isWin(this),
+			    elem = win ? this.contentWindow || window : this,
+			    $elem = $(elem),
+			    targ = target,
+			    attr = {},
+			    toff;
+
+			switch (typeof targ) {
+				// A number will pass the regex
+				case 'number':
+				case 'string':
+					if (/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
+						targ = both(targ);
+						// We are done
+						break;
+					}
+					// Relative/Absolute selector
+					targ = win ? $(targ) : $(targ, elem);
+				/* falls through */
+				case 'object':
+					if (targ.length === 0) return;
+					// DOMElement / jQuery
+					if (targ.is || targ.style) {
+						// Get the real position of the target
+						toff = (targ = $(targ)).offset();
+					}
+			}
+
+			var offset = isFunction(settings.offset) && settings.offset(elem, targ) || settings.offset;
+
+			$.each(settings.axis.split(''), function (i, axis) {
+				var Pos = axis === 'x' ? 'Left' : 'Top',
+				    pos = Pos.toLowerCase(),
+				    key = 'scroll' + Pos,
+				    prev = $elem[key](),
+				    max = $scrollTo.max(elem, axis);
+
+				if (toff) {
+					// jQuery / DOMElement
+					attr[key] = toff[pos] + (win ? 0 : prev - $elem.offset()[pos]);
+
+					// If it's a dom element, reduce the margin
+					if (settings.margin) {
+						attr[key] -= parseInt(targ.css('margin' + Pos), 10) || 0;
+						attr[key] -= parseInt(targ.css('border' + Pos + 'Width'), 10) || 0;
+					}
+
+					attr[key] += offset[pos] || 0;
+
+					if (settings.over[pos]) {
+						// Scroll to a fraction of its width/height
+						attr[key] += targ[axis === 'x' ? 'width' : 'height']() * settings.over[pos];
+					}
+				} else {
+					var val = targ[pos];
+					// Handle percentage values
+					attr[key] = val.slice && val.slice(-1) === '%' ? parseFloat(val) / 100 * max : val;
+				}
+
+				// Number or 'number'
+				if (settings.limit && /^\d+$/.test(attr[key])) {
+					// Check the limits
+					attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
+				}
+
+				// Don't waste time animating, if there's no need.
+				if (!i && settings.axis.length > 1) {
+					if (prev === attr[key]) {
+						// No animation needed
+						attr = {};
+					} else if (queue) {
+						// Intermediate animation
+						animate(settings.onAfterFirst);
+						// Don't animate this axis again in the next iteration.
+						attr = {};
+					}
+				}
+			});
+
+			animate(settings.onAfter);
+
+			function animate(callback) {
+				var opts = $.extend({}, settings, {
+					// The queue setting conflicts with animate()
+					// Force it to always be true
+					queue: true,
+					duration: duration,
+					complete: callback && function () {
+						callback.call(elem, targ, settings);
+					}
+				});
+				$elem.animate(attr, opts);
+			}
+		});
+	};
+
+	// Max scrolling position, works on quirks mode
+	// It only fails (not too badly) on IE, quirks mode.
+	$scrollTo.max = function (elem, axis) {
+		var Dim = axis === 'x' ? 'Width' : 'Height',
+		    scroll = 'scroll' + Dim;
+
+		if (!isWin(elem)) return elem[scroll] - $(elem)[Dim.toLowerCase()]();
+
+		var size = 'client' + Dim,
+		    doc = elem.ownerDocument || elem.document,
+		    html = doc.documentElement,
+		    body = doc.body;
+
+		return Math.max(html[scroll], body[scroll]) - Math.min(html[size], body[size]);
+	};
+
+	function both(val) {
+		return isFunction(val) || $.isPlainObject(val) ? val : { top: val, left: val };
+	}
+
+	// Add special hooks so that window scroll properties can be animated
+	$.Tween.propHooks.scrollLeft = $.Tween.propHooks.scrollTop = {
+		get: function get(t) {
+			return $(t.elem)[t.prop]();
+		},
+		set: function set(t) {
+			var curr = this.get(t);
+			// If interrupt is true and user scrolled, stop animating
+			if (t.options.interrupt && t._last && t._last !== curr) {
+				return $(t.elem).stop();
+			}
+			var next = Math.round(t.now);
+			// Don't waste CPU
+			// Browsers don't render floating point scroll
+			if (curr !== next) {
+				$(t.elem)[t.prop](next);
+				t._last = this.get(t);
+			}
+		}
+	};
+
+	// AMD requirement
+	return $scrollTo;
+});
+
+/***/ }),
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6954,7 +7231,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! tether 1.4
 });
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6982,348 +7259,19 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(26);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(27)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(28);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(7);
 module.exports = __webpack_require__(8);
 
-
-/***/ }),
-/* 30 */,
-/* 31 */,
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $ = __webpack_require__(0);
-var scrollTo = __webpack_require__(83);
-
-$(document).ready(function () {
-  // Scrolling effect for Arrow icons
-  $(".banner-full-height a").click(function (e) {
-    $.scrollTo($(".products-section-title"), 800);
-  });
-});
-
-(function ($) {
-  /**
-   * Copyright 2012, Digital Fusion
-   * Licensed under the MIT license.
-   * http://teamdf.com/jquery-plugins/license/
-   *
-   * @author Sam Sehnert
-   * @desc A small plugin that checks whether elements are within
-   *     the user visible viewport of a web browser.
-   *     only accounts for vertical position, not horizontal.
-   */
-
-  $.fn.visible = function (partial) {
-    var $t = $(this),
-        $w = $(window),
-        viewTop = $w.scrollTop(),
-        viewBottom = viewTop + $w.height(),
-        _top = $t.offset().top,
-        _bottom = _top + $t.height(),
-        compareTop = partial === true ? _bottom : _top,
-        compareBottom = partial === true ? _top : _bottom;
-
-    return compareBottom <= viewBottom && compareTop >= viewTop;
-  };
-})(jQuery);
-
-var win = $(window);
-var allMods = $(".featured-products");
-
-win.scroll(function (event) {
-  allMods.each(function (i, el) {
-    var el = $(el);
-    if (el.visible(true)) {
-      el.addClass("come-in");
-    }
-  });
-});
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery.scrollTo
- * Copyright (c) 2007 Ariel Flesler - aflesler ○ gmail • com | https://github.com/flesler
- * Licensed under MIT
- * https://github.com/flesler/jquery.scrollTo
- * @projectDescription Lightweight, cross-browser and highly customizable animated scrolling with jQuery
- * @author Ariel Flesler
- * @version 2.1.3
- */
-
-
-;(function (factory) {
-	'use strict';
-	if (true) {
-		// AMD
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
-				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
-				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else if (typeof module !== 'undefined' && module.exports) {
-		// CommonJS
-		module.exports = factory(require('jquery'));
-	} else {
-		// Global
-		factory(jQuery);
-	}
-})(function ($) {
-	'use strict';
-
-	var $scrollTo = $.scrollTo = function (target, duration, settings) {
-		return $(window).scrollTo(target, duration, settings);
-	};
-
-	$scrollTo.defaults = {
-		axis: 'xy',
-		duration: 0,
-		limit: true
-	};
-
-	function isWin(elem) {
-		return !elem.nodeName || $.inArray(elem.nodeName.toLowerCase(), ['iframe', '#document', 'html', 'body']) !== -1;
-	}
-
-	function isFunction(obj) {
-		// Brought from jQuery since it's deprecated
-		return typeof obj === 'function';
-	}
-
-	$.fn.scrollTo = function (target, duration, settings) {
-		if (typeof duration === 'object') {
-			settings = duration;
-			duration = 0;
-		}
-		if (typeof settings === 'function') {
-			settings = { onAfter: settings };
-		}
-		if (target === 'max') {
-			target = 9e9;
-		}
-
-		settings = $.extend({}, $scrollTo.defaults, settings);
-		// Speed is still recognized for backwards compatibility
-		duration = duration || settings.duration;
-		// Make sure the settings are given right
-		var queue = settings.queue && settings.axis.length > 1;
-		if (queue) {
-			// Let's keep the overall duration
-			duration /= 2;
-		}
-		settings.offset = both(settings.offset);
-		settings.over = both(settings.over);
-
-		return this.each(function () {
-			// Null target yields nothing, just like jQuery does
-			if (target === null) return;
-
-			var win = isWin(this),
-			    elem = win ? this.contentWindow || window : this,
-			    $elem = $(elem),
-			    targ = target,
-			    attr = {},
-			    toff;
-
-			switch (typeof targ) {
-				// A number will pass the regex
-				case 'number':
-				case 'string':
-					if (/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
-						targ = both(targ);
-						// We are done
-						break;
-					}
-					// Relative/Absolute selector
-					targ = win ? $(targ) : $(targ, elem);
-				/* falls through */
-				case 'object':
-					if (targ.length === 0) return;
-					// DOMElement / jQuery
-					if (targ.is || targ.style) {
-						// Get the real position of the target
-						toff = (targ = $(targ)).offset();
-					}
-			}
-
-			var offset = isFunction(settings.offset) && settings.offset(elem, targ) || settings.offset;
-
-			$.each(settings.axis.split(''), function (i, axis) {
-				var Pos = axis === 'x' ? 'Left' : 'Top',
-				    pos = Pos.toLowerCase(),
-				    key = 'scroll' + Pos,
-				    prev = $elem[key](),
-				    max = $scrollTo.max(elem, axis);
-
-				if (toff) {
-					// jQuery / DOMElement
-					attr[key] = toff[pos] + (win ? 0 : prev - $elem.offset()[pos]);
-
-					// If it's a dom element, reduce the margin
-					if (settings.margin) {
-						attr[key] -= parseInt(targ.css('margin' + Pos), 10) || 0;
-						attr[key] -= parseInt(targ.css('border' + Pos + 'Width'), 10) || 0;
-					}
-
-					attr[key] += offset[pos] || 0;
-
-					if (settings.over[pos]) {
-						// Scroll to a fraction of its width/height
-						attr[key] += targ[axis === 'x' ? 'width' : 'height']() * settings.over[pos];
-					}
-				} else {
-					var val = targ[pos];
-					// Handle percentage values
-					attr[key] = val.slice && val.slice(-1) === '%' ? parseFloat(val) / 100 * max : val;
-				}
-
-				// Number or 'number'
-				if (settings.limit && /^\d+$/.test(attr[key])) {
-					// Check the limits
-					attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
-				}
-
-				// Don't waste time animating, if there's no need.
-				if (!i && settings.axis.length > 1) {
-					if (prev === attr[key]) {
-						// No animation needed
-						attr = {};
-					} else if (queue) {
-						// Intermediate animation
-						animate(settings.onAfterFirst);
-						// Don't animate this axis again in the next iteration.
-						attr = {};
-					}
-				}
-			});
-
-			animate(settings.onAfter);
-
-			function animate(callback) {
-				var opts = $.extend({}, settings, {
-					// The queue setting conflicts with animate()
-					// Force it to always be true
-					queue: true,
-					duration: duration,
-					complete: callback && function () {
-						callback.call(elem, targ, settings);
-					}
-				});
-				$elem.animate(attr, opts);
-			}
-		});
-	};
-
-	// Max scrolling position, works on quirks mode
-	// It only fails (not too badly) on IE, quirks mode.
-	$scrollTo.max = function (elem, axis) {
-		var Dim = axis === 'x' ? 'Width' : 'Height',
-		    scroll = 'scroll' + Dim;
-
-		if (!isWin(elem)) return elem[scroll] - $(elem)[Dim.toLowerCase()]();
-
-		var size = 'client' + Dim,
-		    doc = elem.ownerDocument || elem.document,
-		    html = doc.documentElement,
-		    body = doc.body;
-
-		return Math.max(html[scroll], body[scroll]) - Math.min(html[size], body[size]);
-	};
-
-	function both(val) {
-		return isFunction(val) || $.isPlainObject(val) ? val : { top: val, left: val };
-	}
-
-	// Add special hooks so that window scroll properties can be animated
-	$.Tween.propHooks.scrollLeft = $.Tween.propHooks.scrollTop = {
-		get: function get(t) {
-			return $(t.elem)[t.prop]();
-		},
-		set: function set(t) {
-			var curr = this.get(t);
-			// If interrupt is true and user scrolled, stop animating
-			if (t.options.interrupt && t._last && t._last !== curr) {
-				return $(t.elem).stop();
-			}
-			var next = Math.round(t.now);
-			// Don't waste CPU
-			// Browsers don't render floating point scroll
-			if (curr !== next) {
-				$(t.elem)[t.prop](next);
-				t._last = this.get(t);
-			}
-		}
-	};
-
-	// AMD requirement
-	return $scrollTo;
-});
 
 /***/ })
 /******/ ]);

@@ -35,7 +35,7 @@ $(document).ready(function () {
 })(jQuery);
 
 var win = $(window);
-var allMods = $(".featured-products");
+var allMods = $(["#recommended", "#custom-text", "#bestsellers"]);
 
 win.scroll(function (event) {
   allMods.each(function (i, el) {
