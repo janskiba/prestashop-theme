@@ -1104,7 +1104,7 @@ $(document).ready(function () {
 })(jQuery);
 
 var win = $(window);
-var allMods = $(["#recommended", "#custom-text", "#bestsellers"]);
+var allMods = $(["#recommended", "#custom-text", "#bestsellers", "#restaurants"]);
 
 win.scroll(function (event) {
   allMods.each(function (i, el) {
