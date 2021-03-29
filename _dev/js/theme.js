@@ -37,6 +37,7 @@ import "./listing";
 import "./product";
 import "./cart";
 import "./animations";
+import "./restaurantsslider";
 
 import prestashop from "prestashop";
 import EventEmitter from "events";
