@@ -1117,6 +1117,10 @@ win.scroll(function (event) {
   });
 });
 
+$(window).on("load", function () {
+  $(".loader-wrapper").fadeOut("slow");
+});
+
 /***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {

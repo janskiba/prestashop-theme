@@ -26,6 +26,9 @@
 
     {block name='page_content_container'}
       <section id="content" class="page-home">
+      <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
         {block name='page_content_top'}{/block}
 
         {block name='page_content'}
