@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 31);
+/******/ 	return __webpack_require__(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -955,17 +955,17 @@ module.exports = __webpack_amd_options__;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-__webpack_require__(30);
+__webpack_require__(31);
 
-__webpack_require__(23);
-
-__webpack_require__(25);
-
-__webpack_require__(22);
+__webpack_require__(24);
 
 __webpack_require__(26);
 
-__webpack_require__(21);
+__webpack_require__(23);
+
+__webpack_require__(27);
+
+__webpack_require__(22);
 
 __webpack_require__(20);
 
@@ -981,13 +981,13 @@ __webpack_require__(10);
 
 __webpack_require__(9);
 
-__webpack_require__(84);
+__webpack_require__(21);
 
 var _prestashop = __webpack_require__(1);
 
 var _prestashop2 = _interopRequireDefault(_prestashop);
 
-var _events = __webpack_require__(24);
+var _events = __webpack_require__(25);
 
 var _events2 = _interopRequireDefault(_events);
 
@@ -1070,12 +1070,12 @@ for (var i in _events2["default"].prototype) {
 
 
 var $ = __webpack_require__(0);
-var scrollTo = __webpack_require__(27);
+var scrollTo = __webpack_require__(28);
 
 $(document).ready(function () {
   // Scrolling effect for Arrow icons
   $(".banner-full-height a").click(function (e) {
-    $.scrollTo($(".products-section-title"), 800);
+    $.scrollTo($(".products-section-title"), 300);
   });
 });
 
@@ -2770,6 +2770,55 @@ function toggleMobileStyles() {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+var $ = __webpack_require__(0);
+
+$(document).ready(function () {
+  var $slider = $(".slider"),
+      diff = 0,
+      curSlide = 0,
+      numOfSlides = $(".slide").length - 1,
+      autoSlideTimeout,
+      autoSlideDelay = 6000,
+      $pagination = $(".slider-pagi");
+
+  function createBullets() {
+    for (var i = 0; i < numOfSlides + 1; i++) {
+      var $li = $("<li class='slider-pagi__elem'></li>");
+      $li.addClass("slider-pagi__elem-" + i).data("page", i);
+      if (!i) $li.addClass("active");
+      $pagination.append($li);
+    }
+  }
+
+  createBullets();
+
+  function autoSlide() {
+    autoSlideTimeout = setTimeout(function () {
+      curSlide++;
+      if (curSlide > numOfSlides) curSlide = 0;
+      changeSlides();
+    }, autoSlideDelay);
+  }
+
+  autoSlide();
+
+  function changeSlides(instant) {
+    $(".slide").removeClass("active");
+    $(".slide-" + curSlide).addClass("active");
+    $(".slider-pagi__elem").removeClass("active");
+    $(".slider-pagi__elem-" + curSlide).addClass("active");
+    diff = 0;
+    autoSlide();
+  }
+});
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
@@ -2854,7 +2903,7 @@ _prestashop2['default'].themeSelectors = {
 });
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3537,7 +3586,7 @@ _prestashop2['default'].themeSelectors = {
 })(jQuery);
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4334,7 +4383,7 @@ if ("undefined" == typeof jQuery) throw new Error("Bootstrap's JavaScript requir
 })();
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4607,7 +4656,7 @@ function isUndefined(arg) {
 }
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4790,7 +4839,7 @@ var require;var require;
 });
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5071,7 +5120,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5293,7 +5342,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 });
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7233,7 +7282,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! tether 1.4
 });
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7261,120 +7310,19 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(28);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(29)))
+/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Tether"] = __webpack_require__(29);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)))
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(7);
 module.exports = __webpack_require__(8);
 
-
-/***/ }),
-/* 32 */,
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $ = __webpack_require__(0);
-
-$(document).ready(function () {
-  var $slider = $(".slider"),
-      diff = 0,
-      curSlide = 0,
-      numOfSlides = $(".slide").length - 1,
-      autoSlideTimeout,
-      autoSlideDelay = 6000,
-      $pagination = $(".slider-pagi");
-
-  function createBullets() {
-    for (var i = 0; i < numOfSlides + 1; i++) {
-      var $li = $("<li class='slider-pagi__elem'></li>");
-      $li.addClass("slider-pagi__elem-" + i).data("page", i);
-      if (!i) $li.addClass("active");
-      $pagination.append($li);
-    }
-  }
-
-  createBullets();
-
-  function autoSlide() {
-    autoSlideTimeout = setTimeout(function () {
-      curSlide++;
-      if (curSlide > numOfSlides) curSlide = 0;
-      changeSlides();
-    }, autoSlideDelay);
-  }
-
-  autoSlide();
-
-  function changeSlides(instant) {
-    $(".slide").removeClass("active");
-    $(".slide-" + curSlide).addClass("active");
-    $(".slider-pagi__elem").removeClass("active");
-    $(".slider-pagi__elem-" + curSlide).addClass("active");
-    diff = 0;
-    autoSlide();
-  }
-});
 
 /***/ })
 /******/ ]);
