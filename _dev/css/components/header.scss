@@ -37,7 +37,9 @@
   .header-nav {
     max-height: 50px;
     border-bottom: $gray-light 2px solid;
-
+    .row {
+      margin: 0 !important;
+    }
     #menu-icon {
       margin: 0 1rem;
       vertical-align: middle;
@@ -67,6 +69,7 @@
       white-space: nowrap;
 
       .account {
+        display: block;
         margin-left: $small-space;
       }
     }
