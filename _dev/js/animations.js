@@ -51,6 +51,6 @@ win.scroll(function (event) {
   });
 });
 
-/* $(window).on("load", function () {
+$(window).on("load", function () {
   $(".loader-wrapper").fadeOut("slow");
-}); */
+});
