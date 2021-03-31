@@ -1,4 +1,8 @@
 #product {
+  #wrapper {
+    max-width: 1700px;
+    margin: auto;
+  }
   #content {
     position: relative;
     max-width: 452px;
@@ -291,6 +295,7 @@
 
   img {
     background: #fff;
+    border-radius: 50%;
   }
 
   .layer {
@@ -302,6 +307,7 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     text-align: center;
     cursor: pointer;
     background: #000;
@@ -544,6 +550,7 @@
       &.selected,
       &:hover {
         border: $brand-primary 3px solid;
+        border-radius: 50%;
       }
     }
   }

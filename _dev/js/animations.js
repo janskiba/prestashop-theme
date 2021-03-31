@@ -2,7 +2,7 @@ var $ = require("jquery");
 var scrollTo = require("jquery.scrollto");
 
 $(document).ready(function () {
-  // Scrolling effect for Arrow icons
+  // Scrolling effect for Arrow icon
   $(".banner-full-height a").click(function (e) {
     $.scrollTo($(".products-section-title"), 300);
   });

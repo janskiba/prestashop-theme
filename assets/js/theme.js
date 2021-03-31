@@ -1073,7 +1073,7 @@ var $ = __webpack_require__(0);
 var scrollTo = __webpack_require__(28);
 
 $(document).ready(function () {
-  // Scrolling effect for Arrow icons
+  // Scrolling effect for Arrow icon
   $(".banner-full-height a").click(function (e) {
     $.scrollTo($(".products-section-title"), 300);
   });
