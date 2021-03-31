@@ -1,3 +1,6 @@
+#content-wrapper {
+  width: 100%;
+}
 #products {
   color: $gray;
 
@@ -22,12 +25,13 @@
 }
 
 .block-category {
-  min-height: 13.75rem;
-  margin-bottom: 1.563rem;
+  margin-bottom: 2.5rem;
 
   h1 {
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 300;
   }
 
   .block-category-inner {
@@ -62,6 +66,7 @@
 }
 
 .products-selection {
+  display: none;
   .sort-by-row {
     display: flex;
     align-items: center;
@@ -248,7 +253,8 @@
 }
 
 .pagination {
-  width: 100%;
+  display: none;
+  /* width: 100%;
   font-size: 0.875rem;
 
   > div:first-child {
@@ -272,8 +278,8 @@
 
     &:not(.previous):not(.next) {
       letter-spacing: 0.125rem;
-    }
-  }
+    } 
+  }*/
 
   .previous {
     float: left;

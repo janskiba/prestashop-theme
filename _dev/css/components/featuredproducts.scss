@@ -209,7 +209,10 @@ $product-description-height: 70px;
   }
 
   @media (max-width: 833px) {
-    .featured-products {
+    #products,
+    .featured-products,
+    .product-accessories,
+    .product-miniature {
       .products {
         display: grid;
         grid-template-columns: 100%;

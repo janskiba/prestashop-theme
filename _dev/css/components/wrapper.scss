@@ -15,8 +15,9 @@
     padding: 0;
   }
   .breadcrumb {
-    padding: 0;
+    padding-top: 2rem;
     background: transparent;
+    text-align: center;
 
     &[data-depth="1"] {
       display: none;
