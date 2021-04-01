@@ -37,7 +37,9 @@
   .header-nav {
     max-height: 50px;
     border-bottom: $gray-light 2px solid;
-
+    .row {
+      margin: 0 !important;
+    }
     #menu-icon {
       margin: 0 1rem;
       vertical-align: middle;
@@ -67,6 +69,7 @@
       white-space: nowrap;
 
       .account {
+        display: block;
         margin-left: $small-space;
       }
     }
@@ -77,15 +80,6 @@
     }
 
     .cart-preview {
-      &.active {
-        background: $brand-primary;
-
-        a,
-        i {
-          color: #fff;
-        }
-      }
-
       .shopping-cart {
         color: $gray;
         vertical-align: middle;
@@ -102,7 +96,6 @@
       margin-left: 0.9375rem;
       text-align: center;
       white-space: nowrap;
-      background: $gray-light;
 
       a {
         color: $gray;
@@ -149,7 +142,6 @@
 
     > .container {
       position: relative;
-      width: $primary-width;
 
       > .row:first-of-type {
         display: flex;
@@ -197,10 +189,47 @@
       }
     }
   }
-}
 
-@media (max-width: 1499px) {
-  .container {
-    max-width: $max-width-md;
+  @media (max-width: 1024px) {
+    .header-nav {
+      max-height: 83px;
+      height: 83px;
+
+      .container {
+        padding: 16px 0px;
+        width: 100%;
+        margin: 0;
+        .row {
+          margin: 0 10px;
+        }
+      }
+
+      .hidden-md-up {
+        display: block !important;
+      }
+
+      .hidden-sm-down {
+        display: none !important;
+      }
+
+      .img-responsive {
+        padding-top: 12px;
+        margin-left: 65px;
+      }
+    }
+
+    .header-top {
+      padding: 0;
+      height: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .header-nav {
+      .img-responsive {
+        padding-top: 0;
+        margin-left: 0px;
+      }
+    }
   }
 }

@@ -1,6 +1,12 @@
 #main {
   .page-header {
     margin-bottom: 1.563rem;
+    h1 {
+      margin: 3rem;
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: 300;
+    }
   }
 
   .page-content {

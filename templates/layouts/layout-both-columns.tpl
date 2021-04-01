@@ -32,7 +32,9 @@
   </head>
 
   <body id="{$page.page_name}" class="{$page.body_classes|classnames}">
-
+      <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
     {block name='hook_after_body_opening_tag'}
       {hook h='displayAfterBodyOpeningTag'}
     {/block}
@@ -54,6 +56,9 @@
 
       <section id="wrapper">
         {hook h="displayWrapperTop"}
+        <div id="imageslider-container" class = "container-fluid">
+          {widget name ='ps_imageslider'}
+        </div>
         <div class="container">
           {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}

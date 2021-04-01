@@ -77,7 +77,8 @@ body#checkout {
   }
 
   section#content {
-    margin-bottom: 1.563rem;
+    max-width: 1700px;
+    margin: 0 auto 1.563rem auto;
   }
 
   .container {
@@ -424,6 +425,10 @@ body#checkout {
       margin-top: 1.563rem;
       margin-left: 0.3125rem;
 
+      footer {
+        text-align: center;
+      }
+
       .form-control-label {
         text-align: left;
       }
@@ -693,6 +698,11 @@ body#checkout {
 }
 
 #order-confirmation {
+  #content-wrapper {
+    max-width: 1700px;
+    width: 100%;
+    margin: auto;
+  }
   #registration-form {
     width: 50%;
     margin: 0 auto 1rem;
