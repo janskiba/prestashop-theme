@@ -20,15 +20,12 @@
     }
   }
 
-  .copyrighting-info {
-    margin-top: 2rem;
-  }
-
   @media (max-width: 833px) {
     .footer-column-container {
       flex-direction: column;
       .footer-column {
         margin: 0 auto 3rem auto;
+        width: auto;
       }
     }
   }

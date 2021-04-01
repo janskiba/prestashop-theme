@@ -8,9 +8,13 @@
     max-width: 452px;
     margin: 0 auto;
   }
-  .row {
-    margin: 1rem 0;
+
+  #main {
+    .row {
+      margin: 1rem 0;
+    }
   }
+ 
 }
 
 .product-price {
@@ -486,7 +490,6 @@
   }
 
   .cart-content {
-    padding-left: $extra-large-space;
 
     .btn {
       margin-bottom: $small-space;
